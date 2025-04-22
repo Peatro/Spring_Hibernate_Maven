@@ -22,7 +22,7 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/postgres?ssl=false
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres?ssl=false
     ports:
       - "8080:8080"
     volumes:
