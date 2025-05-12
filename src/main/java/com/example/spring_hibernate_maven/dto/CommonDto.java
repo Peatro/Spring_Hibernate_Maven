@@ -6,20 +6,7 @@ import lombok.Data;
 
 @Data
 @MappedSuperclass
-public abstract class CommonDto<T extends UserModel> implements Dto<T> {
+public abstract class CommonDto implements Dto {
     protected String name;
     protected String email;
-
-    @Override
-    public void convertToDTO(T entity) {
-        this.name = entity.getName();
-        this.email = entity.getEmail();
-    }
-
-    protected void fillCommonFields(T entity) {
-        entity.setName(this.name);
-        entity.setEmail(this.email);
-    }
-
-
 }
